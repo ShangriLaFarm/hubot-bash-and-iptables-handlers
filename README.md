@@ -5,12 +5,12 @@ First, [RTFM](https://hubot.github.com/)
 
 Then install [hubot-script-shellcmd](https://www.npmjs.com/package/hubot-script-shellcmd/)
 
-Now you can use the [run]() script simply by put it in hubot_dir/bash/handlers and use it like
+Now you can use the [run](https://github.com/ShangriLaFarm/hubot-bash-and-iptables-handlers/blob/master/run) script simply by put it in hubot_dir/bash/handlers and use it like
 ```bash
   shellcmd run date
 ```
 
-To use the ban [ban]() script you need to add an IPTABLES chain with the name "DOOMED"
+To use the ban [ban](https://github.com/ShangriLaFarm/hubot-bash-and-iptables-handlers/blob/master/ban) script you need to add an IPTABLES chain with the name "DOOMED"
 ```bash
   iptables -N DOOMED
 ```

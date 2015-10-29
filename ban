@@ -1,0 +1,23 @@
+#!/bin/bash
+
+if [ -z "$1" ]; then
+	echo -e "Usage:\n"
+	echo -e " shellcmd ban <ip>\n"
+	echo " shellcmd ban save"
+	exit 0
+fi
+
+
+if [ $1 = "save" ]; then
+	echo "sudo iptables-save > /etc/firewall.conf"
+	sudo iptables-save | sudo tee /etc/firewall.conf > /dev/null
+	cat  /etc/firewall.conf
+	exit 0
+fi
+
+
+echo "sudo iptables -A INPUT -s $1 -j DOOMED"
+
+sudo iptables -A INPUT -s $1 -j DOOMED
+
+exit 0

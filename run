@@ -1,0 +1,11 @@
+#!/bin/bash
+
+if [ -z "$1" ]; then
+	echo -e "Usage:\n"
+	echo -e " shellcmd run <bash command> <command arg> <command arg>"
+	exit 0
+fi
+
+${@}
+
+exit 0

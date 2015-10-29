@@ -25,12 +25,12 @@ or to show and save IPTABLES rules to /etc/firewall.conf
   shellcmd ban save
 ```
 
-In our case we add some stuff to the DOOMED chain you can do that if you want functionality like "log&drop"
+In our case we add some stuff to the DOOMED chain so you can do that if you want functionality like "log&drop"
 ```bash
   iptables -A DOOMED -j LOG --log-prefix "DOOMED:" --log-level 4
   iptables -A DOOMED -j DROP
 ```
-in this way packets are logged and them dropped.
+in this way packets are logged and then dropped.
 
 To intercept packets logged in this way we add an /etc/rsyslog.d/iptables-doomed.conf file with these content
 ```bash
@@ -40,6 +40,10 @@ To intercept packets logged in this way we add an /etc/rsyslog.d/iptables-doomed
 and the restart rsyslog
 ```bash
   /etc/init.d/rsyslog restart
+```
+doing that you can watch logs about DOOMED packets in
+```bash
+  tail -f /var/log/iptables-doomed.log
 ```
 
 For direct support click [here](http://hubs.ly/H01ldz50)

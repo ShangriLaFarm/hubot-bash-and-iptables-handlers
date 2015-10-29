@@ -15,7 +15,7 @@ To use the ban [ban](https://github.com/ShangriLaFarm/hubot-bash-and-iptables-ha
   iptables -N DOOMED
 ```
 
-then you can talk to HUBOT for "ban" a CIDR
+then you need to put it in hubot_dir/bash/handlers and you can talk to HUBOT for "ban" a CIDR
 ```bash
   shellcmd ban 85.21.47.65/32
 ```
